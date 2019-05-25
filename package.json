@@ -1,0 +1,10 @@
+{
+  "name": "codehub",
+  "version": "0.0.2",
+  "description": "CodeHub ",
+  "author": "Abrar Zahin",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-server-io": "^1.4.0"
+  }
+}
