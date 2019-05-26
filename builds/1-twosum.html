@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+     <section>
+        <img src="images/twosum.gif" >
+        <h3>Two Sum</h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+                class Solution {<br>
+                    public int[] twoSum(int[] nums, int target) {    <br>
+                        for (int i = 0; i < nums.length; i++) {    <br>
+                        for (int j = i + 1; j < nums.length; j++) {<br>
+                            if (nums[j] == target - nums[i]) {<br>
+                                return new int[] { i, j };<br>
+                            }<br>
+                        }<br>
+                    }<br>
+                    throw new IllegalArgumentException("No two sum solution");
+                    }
+                }
+
+        </p>
+      </section>
+    </body>
+
+    </html>

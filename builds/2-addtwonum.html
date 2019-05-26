@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+     <section>
+        <img src="images/2-addtwonum.gif" >
+        <h3>Add two num</h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+            <br>    class Solution {
+            <br>        public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+            <br>            
+            <br>          
+            <br>            int carry = 0;
+            <br>            ListNode head = null;
+            <br>            ListNode preNode = null;
+            <br>            ListNode temp = null;
+            <br>            int indx = 0;
+            <br>            
+            <br>            while (l1!=null || l2!=null){
+            <br>                if(l1==null && l2!=null){
+            <br>                    temp = new ListNode((l2.val + carry)%10);
+            <br>                    carry = (l2.val + carry) > 9 ? 1:0 ;
+            <br>                }
+            <br>                if(l1!=null && l2==null){
+            <br>                    temp = new ListNode((l1.val + carry)%10 );
+            <br>                    carry = (l1.val + carry) > 9 ? 1:0 ;
+            <br>                }
+            <br>                if(l1!=null && l2!=null){
+            <br>                    temp = new ListNode((l1.val + l2.val + carry)%10);
+            <br>                    carry = (l1.val + l2.val + carry) > 9 ? 1:0 ;
+            <br>                }
+            <br>                
+            <br>                
+            <br>                if(l1!=null) {
+            <br>                    l1 = l1.next;
+            <br>                }
+            <br>                if(l2!=null) {
+            <br>                    l2 = l2.next;
+            <br>                }
+            <br>                
+            <br>                if(indx == 0) {
+            <br>                    head = temp;
+            <br>                    preNode = head;
+            <br>                    indx ++;
+            <br>                    continue;
+            <br>                }
+            <br>                
+            <br>                preNode.next = temp;
+            <br>                preNode = temp;
+            <br>            }
+            <br>            if(carry > 0) {
+            <br>                preNode.next = new ListNode(1); 
+            <br>            }
+            <br>            
+            <br>            return head;
+            <br>    
+            <br>            
+            <br>        }
+            <br>    }
+            <br>   
+        </p>
+      </section>
+    </body>
+
+    </html>
