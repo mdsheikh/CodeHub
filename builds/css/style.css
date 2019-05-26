@@ -88,6 +88,16 @@
   .site-header .page-section-text {
     font-size: 1.2em;
   }
+  .layout-media .layout-image{
+    max-width: 500px;
+  }
+  .layout-media .layout-title {
+    color: var(--purple);
+    font-family: var(--font-family-sans-serif);
+    font-weight: 200;
+    font-size: 1.6em;
+  }
+  
   .layout-social .layout-icon {
     font-size: 2em;
   }
