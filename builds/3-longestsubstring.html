@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+        <section class="layout-hero d-flex align-items-center text-light text-center">
+        <img src="images/3-longestsub.gif" >
+        <h3>Longest Substring</h3>
+        <h3> Given a string, find the length of the longest substring without repeating characters.
+
+          <br>  Example 1:
+          <br>  
+          <br>  Input: "abcabcbb"
+          <br>  Output: 3 
+          <br>  Explanation: The answer is "abc", with the length of 3. 
+          <br>  Example 2:
+          <br>  
+          <br>  Input: "bbbbb"
+          <br>  Output: 1
+          <br>  Explanation: The answer is "b", with the length of 1.
+          <br>  Example 3:
+          <br>  
+          <br>  Input: "pwwkew"
+          <br>  Output: 3
+          <br>  Explanation: The answer is "wke", with the length of 3. 
+          <br>               Note that the answer must be a substring, "pwke" is a subsequence and not a substring.</h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+          <h3>
+          <br>    public class Solution {
+          <br>      public int lengthOfLongestSubstring(String s) {
+          <br>          int n = s.length(), ans = 0;
+          <br>          Map<Character, Integer> map = new HashMap<>(); // current index of character
+          <br>          // try to extend the range [i, j]
+          <br>          for (int j = 0, i = 0; j < n; j++) {
+          <br>              if (map.containsKey(s.charAt(j))) {
+          <br>                  i = Math.max(map.get(s.charAt(j)), i);
+          <br>              }
+          <br>              ans = Math.max(ans, j - i + 1);
+          <br>              map.put(s.charAt(j), j + 1);
+          <br>          }
+          <br>          return ans;
+          <br>      }
+          <br>  }
+
+
+          </h3>
+        </p>
+      </section>
+
+      <a class="nav-item nav-link" href="index.html"><h4>Back</h4></a>
+    </body>
+
+    </html>
