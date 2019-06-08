@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+        <section class="layout-hero d-flex align-items-center text-light text-center">
+        <img src="images/19-rem-nth-fromend.gif" >
+        <h3> Remove Nth from the end of the list </h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+            <h3>
+                <br>    Given a linked list, remove the n-th node from the end of list and return its head.
+<br>
+                <br>    Example:
+                <br>    
+                <br>    Given linked list: 1->2->3->4->5, and n = 2.
+                <br>    
+                <br>    After removing the second node from the end, the linked list becomes 1->2->3->5.
+            </h3>
+  <h3>
+
+    <br>    class Solution {
+    <br>        public ListNode removeNthFromEnd(ListNode head, int n) {
+    <br>            ListNode dummy =new ListNode(0);
+    <br>            dummy.next = head;
+    <br>            int length=0;
+    <br>            ListNode first = head;
+    <br>            while(first != null){
+    <br>                length ++;
+    <br>                first=first.next;
+    <br>            }
+    <br>            length -= n;
+    <br>            first = dummy;
+    <br>            while(length>0){
+    <br>                length --;
+    <br>                first=first.next;
+    <br>            }
+    <br>            first.next= first.next.next;
+    <br>            return dummy.next;
+    <br>        }
+    <br>    }
+
+
+
+
+
+
+
+
+
+
+
+
+ </h3>
+            
+        </p>
+      </section>
+
+      <a class="nav-item nav-link" href="index.html"><h4>Back</h4></a>
+    </body>
+
+    </html>
