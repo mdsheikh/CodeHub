@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+        <section class="layout-hero d-flex align-items-center text-light text-center">
+        <img src="images/20-valid-paren.gif" >
+        <h3> Valid Parentheses </h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+            <h3>
+<br>Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+<br>
+<br>An input string is valid if:
+<br>
+<br>Open brackets must be closed by the same type of brackets.
+<br>Open brackets must be closed in the correct order.
+<br>Note that an empty string is also considered valid.
+<br>
+<br>Example 1:
+<br>
+<br>Input: "()"
+<br>Output: true
+<br>Example 2:
+<br>
+<br>Input: "()[]{}"
+<br>Output: true
+<br>Example 3:
+<br>
+<br>Input: "(]"
+<br>Output: false
+<br>Example 4:
+<br>
+<br>Input: "([)]"
+<br>Output: false
+<br>Example 5:
+<br>
+<br>Input: "{[]}"
+<br>Output: true
+            </h3>
+  <h3>
+    <br>  class Solution {
+<br>
+    <br>    // Hash table that takes care of the mappings.
+    <br>    private HashMap<Character, Character> mappings;
+    <br>  
+    <br>    // Initialize hash map with mappings. This simply makes the code easier to read.
+    <br>    public Solution() {
+    <br>      this.mappings = new HashMap<Character, Character>();
+    <br>      this.mappings.put(')', '(');
+    <br>      this.mappings.put('}', '{');
+    <br>      this.mappings.put(']', '[');
+    <br>    }
+    <br>  
+    <br>    public boolean isValid(String s) {
+    <br>  
+    <br>      // Initialize a stack to be used in the algorithm.
+    <br>      Stack<Character> stack = new Stack<Character>();
+    <br>  
+    <br>      for (int i = 0; i < s.length(); i++) {
+    <br>        char c = s.charAt(i);
+    <br>  
+    <br>        // If the current character is a closing bracket.
+    <br>        if (this.mappings.containsKey(c)) {
+    <br>  
+    <br>          // Get the top element of the stack. If the stack is empty, set a dummy value of '#'
+    <br>          char topElement = stack.empty() ? '#' : stack.pop();
+    <br>  
+    <br>          // If the mapping for this bracket doesn't match the stack's top element, return false.
+    <br>          if (topElement != this.mappings.get(c)) {
+    <br>            return false;
+    <br>          }
+    <br>        } else {
+    <br>          // If it was an opening bracket, push to the stack.
+    <br>          stack.push(c);
+    <br>        }
+    <br>      }
+    <br>  
+    <br>      // If the stack still contains elements, then it is an invalid expression.
+    <br>      return stack.isEmpty();
+    <br>    }
+    <br>  }
+<br>
+ </h3>
+            
+        </p>
+      </section>
+
+      <a class="nav-item nav-link" href="index.html"><h4>Back</h4></a>
+    </body>
+
+    </html>
