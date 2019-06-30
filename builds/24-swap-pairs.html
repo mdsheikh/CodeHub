@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+        <section class="layout-hero d-flex align-items-center text-light text-center">
+        <img src="images/24-swap-pairs.gif" >
+        <h3> Swap node in pairs</h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+            <h3>
+            <br>    Given a linked list, swap every two adjacent nodes and return its head.
+<br>
+            <br>    You may not modify the values in the list's nodes, only nodes itself may be changed.
+            <br>    
+            <br>     
+            <br>    
+            <br>    Example:
+            <br>    
+            <br>    Given 1->2->3->4, you should return the list as 2->1->4->3.
+            </h3>
+  <h3>
+    <br>  public ListNode swapPairs(ListNode head){
+    <br>      if(head == null || head.next == null){
+    <br>          return head;
+    <br>      }
+<br>
+    <br>      Listnode pre = new ListNode(0);
+    <br>      pre.next = head;
+    <br>      ListNode dummy = pre;
+<br>
+    <br>      while(pre.next != null && pre.next.next != null){
+    <br>          ListNode node1= pre.next;
+    <br>          ListNode node2 = node1.next;
+<br>
+    <br>          node1.next = node2.next;
+    <br>          node2.next = node1;
+    <br>          pre.next = node2;
+<br>
+    <br>          pre = pre.next.next;
+    <br>      }
+    <br>      return dummy.next;
+    <br>    }
+   <br>
+ </h3>
+            
+        </p>
+      </section>
+
+      <a class="nav-item nav-link" href="index.html"><h4>Back</h4></a>
+    </body>
+
+    </html>
