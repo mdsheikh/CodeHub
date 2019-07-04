@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+        <section class="layout-hero d-flex align-items-center text-light text-center">
+        <img src="images/86-partition-list.gif" >
+        <h3> Partition List</h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+<br>        <h3>
+<br>       Given a linked list and a value x, partition it such that all nodes less than x come before nodes greater than or equal to x.
+<br>       
+<br>       You should preserve the original relative order of the nodes in each of the two partitions.
+<br>       
+<br>       Example:
+<br>       
+<br>       Input: head = 1->4->3->2->5->2, x = 3
+<br>       Output: 1->2->2->4->3->5
+            </h3>
+  <h4 align="center">
+   <br> class Solution {
+   <br>     public ListNode partition(ListNode head, int x) {
+   <br> 
+   <br>         // before and after are the two pointers used to create the two list
+   <br>         // before_head and after_head are used to save the heads of the two lists.
+   <br>         // All of these are initialized with the dummy nodes created.
+   <br>         ListNode before_head = new ListNode(0);
+   <br>         ListNode before = before_head;
+   <br>         ListNode after_head = new ListNode(0);
+   <br>         ListNode after = after_head;
+   <br> 
+   <br>         while (head != null) {
+   <br> 
+   <br>             // If the original list node is less than the given x,
+   <br>             // assign it to the before list.
+   <br>             if (head.val < x) {
+   <br>                 before.next = head;
+   <br>                 before = before.next;
+   <br>             } else {
+   <br>                 // If the original list node is greater or equal to the given x,
+   <br>                 // assign it to the after list.
+   <br>                 after.next = head;
+   <br>                 after = after.next;
+   <br>             }
+   <br> 
+   <br>             // move ahead in the original list
+   <br>             head = head.next;
+   <br>         }
+   <br> 
+   <br>         // Last node of "after" list would also be ending node of the reformed list
+   <br>         after.next = null;
+   <br> 
+   <br>         // Once all the nodes are correctly assigned to the two lists,
+   <br>         // combine them to form a single list which would be returned.
+   <br>         before.next = after_head.next;
+   <br> 
+   <br>         return before_head.next;
+   <br>     }
+   <br> }
+ </h4>
+            
+        </p>
+      </section>
+
+      <a class="nav-item nav-link" href="index.html"><h4 align="center">Back</h4></a>
+    </body>
+
+    </html>
