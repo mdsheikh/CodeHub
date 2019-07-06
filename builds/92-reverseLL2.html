@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+        <section class="layout-hero d-flex align-items-center text-light text-center">
+        <img src="images/92-reverseLL2.gif" >
+        <h3> Reverse a linked list (2)</h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+       <h3>
+<br>  Reverse a linked list from position m to n. Do it in one-pass.
+<br>
+<br>  Note: 1 ≤ m ≤ n ≤ length of list.
+<br>
+<br>  Example:
+<br>
+<br> Input: 1->2->3->4->5->NULL, m = 2, n = 4
+<br> Output: 1->4->3->2->5->NULL
+            </h3>
+    <center>
+ 
+    <br>    class Solution {
+    <br>        public ListNode reverseBetween(ListNode head, int m, int n) {
+    <br>    
+    <br>            // Empty list
+    <br>            if (head == null) {
+    <br>                return null;
+    <br>            }
+    <br>    
+    <br>            // Move the two pointers until they reach the proper starting point
+    <br>            // in the list.
+    <br>            ListNode cur = head, prev = null;
+    <br>            while (m > 1) {
+    <br>                prev = cur;
+    <br>                cur = cur.next;
+    <br>                m--;
+    <br>                n--;
+    <br>            }
+    <br>    
+    <br>            // The two pointers that will fix the final connections.
+    <br>            ListNode con = prev, tail = cur;
+    <br>    
+    <br>            // Iteratively reverse the nodes until n becomes 0.
+    <br>            ListNode third = null;
+    <br>            while (n > 0) {
+    <br>                third = cur.next;
+    <br>                cur.next = prev;
+    <br>                prev = cur;
+    <br>                cur = third;
+    <br>                n--;
+    <br>            }
+    <br>    
+    <br>            // Adjust the final connections as explained in the algorithm
+    <br>            if (con != null) {
+    <br>                con.next = prev;
+    <br>            } else {
+    <br>                head = prev;
+    <br>            }
+    <br>    
+    <br>            tail.next = cur;
+    <br>            return head;
+    <br>        }
+    <br>    }
+
+    </center>
+            
+        </p>
+        
+      </section>
+
+      <a class="nav-item nav-link" href="index.html"><h4 align="center">Back</h4></a>
+    </body>
+
+    </html>
