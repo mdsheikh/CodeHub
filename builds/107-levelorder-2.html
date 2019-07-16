@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+        <section class="layout-hero d-flex align-items-center text-light text-center">
+        <img src="images/107-levelorder-2.gif" >
+        <h3> binary tree level order traversal ii </h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+       <h3>
+        <br>    Given a binary tree, return the bottom-up level order traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).
+<br>
+        <br>    For example:
+        <br>    Given binary tree [3,9,20,null,null,15,7],
+        <br>        3
+        <br>       / \
+        <br>      9  20
+        <br>        /  \
+        <br>       15   7
+        <br>    return its bottom-up level order traversal as:
+        <br>    [
+        <br>      [15,7],
+        <br>      [9,20],
+        <br>      [3]
+        <br>    ]
+
+     </h3>
+        <pre>
+            <br>    class Solution {
+            <br>        public List<List<Integer>> levelOrderBottom(TreeNode root) {
+            <br>            List<List<Integer>> res = new ArrayList<>();
+            <br>            if (root == null) return res;
+            <br>            Queue<TreeNode> queue = new LinkedList<>();
+            <br>            queue.add(root);
+            <br>            while (true) {
+            <br>                Queue<TreeNode> temp = new LinkedList<>();
+            <br>                List<Integer> cur = new ArrayList<>();
+            <br>                List<Integer> sub = new ArrayList<>();
+            <br>    
+            <br>                for (TreeNode q : queue) {
+            <br>                    cur.add(q.val);
+            <br>                    if (q.left != null) {
+            <br>                        temp.add(q.left);
+            <br>                    }
+            <br>                    if (q.right != null) {
+            <br>                        temp.add(q.right);
+            <br>                    }
+            <br>                }
+            <br>                res.add(0, cur);
+            <br>                if (temp.isEmpty()) break;
+            <br>                queue = temp;
+            <br>            }
+            <br>            return res;
+            <br>            
+            <br>        }
+            <br>    }
+  <br>
+        </pre>
+            
+        </p>
+        
+      </section>
+
+      <a class="nav-item nav-link" href="index.html"><h4 align="center">Back</h4></a>
+    </body>
+
+    </html>
