@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+        <section class="layout-hero d-flex align-items-center text-light text-center">
+        <img src="images/136-single-num.gif" >
+        <h3> 136. Single Number</h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+       <h3>
+     <br>   Given a non-empty array of integers, every element appears twice except for one. Find that single one.
+<br>
+     <br>   Note:
+     <br>   
+     <br>   Your algorithm should have a linear runtime complexity. Could you implement it without using extra memory?
+     <br>   
+     <br>   Example 1:
+     <br>   
+     <br>   Input: [2,2,1]
+     <br>   Output: 1
+     <br>   Example 2:
+     <br>   
+     <br>   Input: [4,1,2,1,2]
+     <br>   Output: 4
+       </h3>
+
+       <pre>
+        <br>   class Solution{
+<br>
+        <br>        public int singleNumber(int [] nums){
+        <br>            int x=0;
+        <br>            for(int n: nums){
+        <br>                x=x^n;
+        <br>            }
+        <br>            return x;
+        <br>        }
+<br>
+        <br>   }
+<br>
+
+       </pre>
+     
+        
+      </section>
+
+      <a class="nav-item nav-link" href="index.html"><h4 align="center">Back</h4></a>
+    </body>
+
+    </html>
