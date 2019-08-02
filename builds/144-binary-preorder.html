@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+        <section class="layout-hero d-flex align-items-center text-light text-center">
+        <img src="images/144-binary-preorder.gif" >
+        <h3> 144. Binary Tree Preorder Traversal</h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+       <h3>
+        <br>    Given a binary tree, return the preorder traversal of its nodes' values.
+<br>
+        <br>    Example:
+        <br>    
+        <br>    Input: [1,null,2,3]
+        <br>       1
+        <br>        \
+        <br>         2
+        <br>        /
+        <br>       3
+        <br>    
+        <br>    Output: [1,2,3]
+ 
+       </h3>
+
+       <pre>
+        <br>   public List<.Integer> preorderTraversal(TreeNode root){
+        <br>       List<.Integer> ans= new ArrayList<.>();
+        <br>        preorder(root, ans);
+        <br>        return ans;
+        <br>   }
+<br>
+        <br>   private void preorder (TreeNode root, List<.Integer> ans){
+        <br>       if(root == null)
+        <br>       return;
+<br>
+        <br>       ans.add(root.val);
+        <br>       preorder(root.left, ans);
+        <br>       preorder(root.right, ans);
+        <br>   }
+<br>
+       </pre>
+     
+        
+      </section>
+
+      <a class="nav-item nav-link" href="index.html"><h4 align="center">Back</h4></a>
+    </body>
+
+    </html>
