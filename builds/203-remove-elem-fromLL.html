@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+
+     <body>
+        <section class="layout-hero d-flex align-items-center text-light text-center">
+        <img src="images/203-remove-elem-fromLL.gif" >
+        <h3> 203-remove element from Linked list</h3>
+        <p class="layout-hero d-flex align-items-center text-light text-center">
+       <h3>
+    <br>    Remove all elements from a linked list of integers that have value val.
+<br>
+    <br>   Example:
+<br>
+    <br>  Input:  1->2->6->3->4->5->6, val = 6
+    <br>  Output: 1->2->3->4->5
+ 
+       </h3>
+
+       <pre>
+     Solution:
+    <br>       public ListNode removeElements(ListNode head, int val) {
+    <br>        if (head == null) return null;
+    <br>        else {
+    <br>            if (head.val == val) return removeElements(head.next, val);
+    <br>            else {
+    <br>                head.next = removeElements(head.next, val);
+    <br>                return head;
+    <br>            }
+    <br>        }
+    <br>        
+    <br>    }
+  
+       </pre>
+     
+        
+      </section>
+
+      <a class="nav-item nav-link" href="index.html"><h4 align="center">Back</h4></a>
+    </body>
+
+    </html>
